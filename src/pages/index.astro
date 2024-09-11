@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Product from '../components/Product.astro';
+---
+
+<Layout title="Tienda Online">
+  <header>
+    <h1>Tienda Online</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" aria-label="Inicio">Inicio</a></li>
+        <li><a href="#products" aria-label="Productos">Productos</a></li>
+        <li><a href="#about" aria-label="Sobre Nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contact" aria-label="Contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Bienvenidos a Nuestra Tienda</h2>
+      <p>Los mejores productos al mejor precio.</p>
+    </section>
+
+    <section id="products">
+      <h2>Productos Destacados</h2>
+      <Product id="product1" name="Producto 1" price="19.99" description="Descripción detallada del producto 1. Es un producto de alta calidad." />
+      <Product id="product2" name="Producto 2" price="29.99" description="Descripción detallada del producto 2. Es muy popular entre nuestros clientes." />
+      <Product id="product3" name="Producto 3" price="39.99" description="Descripción detallada del producto 3. Ideal para regalar." />
+    </section>
+
+    <section id="about">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos una tienda online dedicada a ofrecer los mejores productos para nuestros clientes. Con años de experiencia en el sector, nos enorgullece ofrecer una experiencia de compra única.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contacto</h2>
+      <form id="contactForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    <a href="https://wa.me/1234567890" target="_blank">
+      <img src="/pngwing.com.webp" alt="Contacta vía WhatsApp" style="width:25px;height:25px;" /> Contacta vía WhatsApp
+    </a>
+    <a href="#avisoLegal" onclick="document.getElementById('modalAvisoLegal').style.display='block'">Aviso Legal</a>
+  </footer>
+
+  <!-- Modal para el Aviso Legal -->
+  <div id="modalAvisoLegal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);">
+    <div style="background-color:white;width:80%;margin:50px auto;padding:20px;border-radius:10px;">
+      <h2>Aviso Legal y Protección de Datos</h2>
+      <p>En esta tienda online, nos comprometemos a proteger su privacidad y cumplir con las normativas de protección de datos vigentes.</p>
+      <h3>LOPD (Ley Orgánica de Protección de Datos)</h3>
+      <p>La LOPD regula el tratamiento de datos personales en España...</p>
+      <button onclick="document.getElementById('modalAvisoLegal').style.display='none'">Cerrar</button>
+    </div>
+  </div>
+
+ <!-- Aquí enlazas tu archivo scripts.js con is:inline -->
+  <script src="/scripts.js" is:inline></script>
+</Layout>
